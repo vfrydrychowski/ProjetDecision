@@ -73,7 +73,7 @@ dvar int assignedTo[Images, Instruments] in bool;
  
 
 // Maximize the sum of the payoffs.
-maximize sum(ima in Images) ((PA[ima] * (1 - ProbaSup[ima])) * selection[ima]) ;
+maximize sum(ima in Images) (PA[ima] * selection[ima]) ;
 
  
 
