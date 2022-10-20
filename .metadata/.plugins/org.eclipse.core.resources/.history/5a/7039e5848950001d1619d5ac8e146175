@@ -109,9 +109,8 @@ constraints {
 	forall (img in Images : TY[img] == 1) 
     	(assignedTo[img,1] + assignedTo[img,2] + assignedTo[img,3]) ==  selection[img];
     	
-   	// Le satéllite ne peut pas mémoriser plus d'image que sa mémoire ne le permet
-   	(sum (i in 0..NbImages) PM[i] * selection[i]) <= PMmax;
-	
+
+
 
 
    
