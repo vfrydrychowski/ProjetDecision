@@ -34,3 +34,15 @@ Command-line arguments:  -clean -nl fr_FR -configuration F:\M2\IA&D\ProjetDecisi
 
 !ENTRY ilog.odms.ide.opllang.remote 1 0 2022-10-20 17:15:57.500
 !MESSAGE Run Configuration 1 in F:/M2/IA&D/ProjetDecision/fatelit
+!SESSION 2022-10-20 17:18:14.952 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=11.0.13+8
+JRE 11 Windows 10 amd64-64-Bit Compressed References 20211022_218 (JIT enabled, AOT enabled)
+OpenJ9   - e1e72c497
+OMR      - 299b6a2d2
+JCL      - 2d83aa3b76 based on jdk-11.0.13+8
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Command-line arguments:  -clean -nl fr_FR -configuration F:\M2\IA&D\ProjetDecision\.metadata\workspace_oplrun
+
+!ENTRY ilog.odms.ide.opllang.remote 1 0 2022-10-20 17:18:14.952
+!MESSAGE Run Configuration 1 in F:/M2/IA&D/ProjetDecision/fatelit

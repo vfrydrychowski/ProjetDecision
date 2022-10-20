@@ -111,7 +111,7 @@ constraints {
     	
 
    	// Le satéllite ne peut pas mémoriser plus d'image que sa mémoire ne le permet
-   	sum(i in Images) PM[i] * selection[i] <= PMmax;
+   	sum(i in 0..NbImages) PM[i] * selection[i] <= PMmax;
 
    
   
