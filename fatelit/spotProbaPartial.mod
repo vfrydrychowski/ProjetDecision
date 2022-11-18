@@ -47,10 +47,9 @@ int DU = ... ;
 // rotation speed of the instruments
 int VI = ... ;
 
- 
-
 // Capacity of the memory
 int PMmax = ... ;
+
 
 range bool = 0 .. 1 ;
 
@@ -64,7 +63,6 @@ dvar int selection[Images] in bool;
 //     image ima  has been selected and assigned to  instrument ins
 dvar int assignedTo[Images, Instruments] in bool;
 
-
  
  
 
@@ -73,7 +71,8 @@ dvar int assignedTo[Images, Instruments] in bool;
  
 
 // Maximize the sum of the payoffs.
-maximize sum(ima in Images) ((PA[ima] * (1 - ProbaSup[ima])) * selection[ima]) ;
+//maximize sum(ima in Images) (PA[ima] * (1 - ProbaSup[ima]) * selection[ima] * probaInstrumentOK[ima]) ; 
+maximize sum(ima in Images) (PA[ima] * selection[ima]) ; 
 
  
 
@@ -90,16 +89,11 @@ constraints {
          ) {
       assignedTo[ima1,ins] + assignedTo[ima2,ins] <= 1 ;
    } ;
-  
-   
-
 
 // Les images stéréo sont réalisée par les instruments 1 et 3, ou pas realises du tout
     forall (img in Images : TY[img] == 2) {
-    
     // (assignedTo[img,1] +  assignedTo[img,3]) == 2*  selection[img];    
     // assignedTo[img,2] == 0;
-    
     	assignedTo[img,1] == selection[img];
     	assignedTo[img,2] == 0;
     	assignedTo[img,3] == selection[img];}
@@ -113,8 +107,16 @@ constraints {
    	sum(i in Images) PM[i] * selection[i] <= PMmax;
 
    
-  
-}
+  	forall(im in Images){
+  	  if (TY[im] == 2){//si stereo
+  	  	probaInstrumentOK[im] == (1 - (maxl(Failure[1], Failure[3]) * assignedTo[im,1]));
+   		}  	  
+   	else { //si mono
+   		probaInstrumentOK[im] == 1 - (sum(ins in Instruments) assignedTo[im, ins] * Failure[ins]);
+   		}
+  	}
+  	
+ }  	
  
  
  /****************************/

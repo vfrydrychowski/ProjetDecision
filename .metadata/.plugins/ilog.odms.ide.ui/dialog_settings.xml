@@ -3,4 +3,7 @@
 	<section name="IloNewOplProjectWizard">
 		<item key="IloNewOplProjectWizard.STORE_ROOT_DIRECTORY" value="C:\Users\remip\opl"/>
 	</section>
+	<section name="IloNewRunConfigWizard">
+		<item key="IloNewRunConfigWizard.STORE_SET_AS_DEFAULT" value="false"/>
+	</section>
 </section>
